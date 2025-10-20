@@ -98,15 +98,7 @@ export default function HomePage() {
     setShowProjectModal(true);
   };
 
-  const handleDownloadCV = () => {
-    // Crear un enlace temporal para descargar el CV
-    const link = document.createElement('a');
-    link.href = 'https://readdy.ai/api/search-image?query=professional%20resume%20CV%20template%20for%20UX%20UI%20designer%20with%20modern%20layout%2C%20clean%20typography%2C%20professional%20sections%2C%20white%20background%2C%20elegant%20design%2C%20portfolio%20showcase&width=800&height=1000&seq=cv&orientation=portrait';
-    link.download = 'Maricel_CV_UX_UI_Designer.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
 
   const scrollToProjects = () => {
     document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' });
@@ -137,70 +129,59 @@ export default function HomePage() {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://readdy.ai/api/search-image?query=elegant%20feminine%20workspace%20with%20soft%20pastel%20pink%20and%20lavender%20tones%2C%20delicate%20floral%20elements%2C%20dreamy%20lighting%2C%20minimalist%20desk%20setup%2C%20romantic%20aesthetic%2C%20professional%20photography%2C%20clean%20white%20background%20blending%20with%20soft%20pink%20hues&width=1920&height=1080&seq=8&orientation=landscape')`
-          }}
-        >
-          <div className="absolute inset-0 bg-white/70"></div>
-        </div>
+<section
+  id="inicio"
+  className="relative min-h-screen flex items-center justify-center overflow-visible"
+>
+  {/* Fondo */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: `url('https://readdy.ai/api/search-image?query=elegant%20feminine%20workspace%20with%20soft%20pastel%20pink%20and%20lavender%20tones%2C%20delicate%20floral%20elements%2C%20dreamy%20lighting%2C%20minimalist%20desk%20setup%2C%20romantic%20aesthetic%2C%20professional%20photography%2C%20clean%20white%20background%20blending%20with%20soft%20pink%20hues&width=1920&height=1080&orientation=landscape')`,
+    }}
+  >
+    <div className="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
+  </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full">
-          <div className="text-left">
-            <div className="mb-6">
-              <span className="text-pink-1000 text-lg font-medium">¡Hola!</span>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mt-2">
-                Soy <span className="text-pink-500">Maricel</span>
-              </h1>
-            </div>
-            <p className="text-xl text-black mb-8 leading-relaxed">
-              Estudiante de Diseño y Programación Web. <br />
-              Creo sitios web con una mirada estética y funcional, combinando diseño visual y desarrollo front-end.
-            </p>
+{/* Contenido */}
+  <div className="relative z-10 max-w-3xl px-6 text-center">
+    <span className="text-black text-lg font-semibold tracking-wide uppercase mb-3 block animate-fadeIn">
+      ¡Hola!
+    </span>
+
+    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fadeInSlow">
+      Soy{" "}
+      <span
+        className="bg-gradient-to-r from-pink-500 via-rose-400 to-purple-500 bg-clip-text text-transparent"
+        style={{ fontFamily: '"Great Vibes", cursive' }}
+      >
+        Maricel
+      </span>
+    </h1>
+
+    <p
+      className="text-xl md:text-2xl font-medium text-gray-800 leading-relaxed mb-10"
+      style={{ textShadow: "0 1px 4px rgba(0, 0, 0, 0.1)" }}
+    >
+      Estudiante de{" "}
+      <span className="text-pink-600 font-semibold">
+        Diseño y Programación Web.
+      </span>
+      <br />
+      Creo sitios web con una mirada estética y funcional, combinando diseño
+      visual y desarrollo front-end.
+    </p>
+
+    <button
+      onClick={scrollToProjects}
+      className="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-10 py-4 rounded-full text-lg font-semibold hover:scale-105 hover:shadow-2xl transition-all duration-300"
+    >
+      Ver mi trabajo
+    </button>
+  </div>
+</section>
 
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={scrollToProjects}
-                className="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-3 rounded-full hover:from-pink-600 hover:to-rose-600 transition-all whitespace-nowrap cursor-pointer shadow-lg"
-              >
-                Ver mi trabajo
-              </button>
-              <button
-                onClick={handleDownloadCV}
-                className="border-2 border-pink-500 text-pink-500 px-8 py-3 rounded-full hover:bg-pink-500 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
-              >
-                Descargar CV
-              </button>
-            </div>
-          </div>
-
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                <img
-                  src="img/foto3.jpg"
-                  alt="Maricel Domínguez - Diseñadora UX/UI"
-                  className="w-full h-full object-contain bg-white"
-                  style={{ objectPosition: 'center top' }}
-                />
-
-
-
-              </div>
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center">
-                <i className="ri-palette-line text-2xl text-pink-500"></i>
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                <i className="ri-code-line text-xl text-purple-500"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* SOBRE MÍ */}
       <section id="sobre-mi" className="py-0 bg-[#FFF9F9]">
@@ -359,7 +340,7 @@ export default function HomePage() {
                 title: "Landing page inspirada en la elegancia de la marca",
                 description:
                   "Diseño web minimalista y sofisticado centrado en la presentación visual de productos premium. Ideal para marcas de moda o lujo.",
-image: `${import.meta.env.BASE_URL}img/proyecto1.png`,
+                image: `${import.meta.env.BASE_URL}img/proyecto1.png`,
 
               },
               {
@@ -367,35 +348,35 @@ image: `${import.meta.env.BASE_URL}img/proyecto1.png`,
                 title: "Sitio web de viajes con diseño moderno y adaptable",
                 description:
                   "Plataforma visual dinámica con enfoque en la experiencia del usuario y navegación fluida entre destinos turísticos.",
-image: `${import.meta.env.BASE_URL}img/proyecto2.png`,
+                image: `${import.meta.env.BASE_URL}img/proyecto2.png`,
               },
               {
                 id: 3,
                 title: "Página de destino elegante para joyería de lujo",
                 description:
                   "Landing page visualmente refinada, con tipografía elegante y un estilo moderno enfocado en piezas exclusivas.",
-image: `${import.meta.env.BASE_URL}img/proyecto3.png`,
+                image: `${import.meta.env.BASE_URL}img/proyecto3.png`,
               },
               {
                 id: 4,
                 title: "Landing promocional cálida y funcional para una app de mascotas",
                 description:
                   "Diseño amable y colorido que comunica cercanía y bienestar, ideal para marcas vinculadas al cuidado animal.",
-image: `${import.meta.env.BASE_URL}img/proyecto4.png`,
+                image: `${import.meta.env.BASE_URL}img/proyecto4.png`,
               },
               {
                 id: 5,
                 title: "Landing page institucional para estudio de abogados",
                 description:
                   "Sitio corporativo profesional con identidad sobria y estructura clara, diseñado para transmitir confianza y profesionalismo.",
-image: `${import.meta.env.BASE_URL}img/proyecto5.png`,
+                image: `${import.meta.env.BASE_URL}img/proyecto5.png`,
               },
               {
                 id: 6,
                 title: "Landing page sobre bienestar y naturaleza",
                 description:
                   "Web inspirada en la conexión con la naturaleza, combinando fotografía propia y diseño orgánico para transmitir calma y equilibrio.",
-image: `${import.meta.env.BASE_URL}img/proyecto6.png`,
+                image: `${import.meta.env.BASE_URL}img/proyecto6.png`,
               },
 
             ].map((project) => (
@@ -658,7 +639,3 @@ image: `${import.meta.env.BASE_URL}img/proyecto6.png`,
     </div>
   );
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> a22fadb3df4f7ce39a2e0e96a2a2b841182f0aae
