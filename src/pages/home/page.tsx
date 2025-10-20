@@ -182,7 +182,6 @@ export default function HomePage() {
 </section>
 
 
-
       {/* SOBRE MÍ */}
       <section id="sobre-mi" className="py-0 bg-[#FFF9F9]">
         <div className="max-w-6xl mx-auto px-6">
