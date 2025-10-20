@@ -98,15 +98,7 @@ export default function HomePage() {
     setShowProjectModal(true);
   };
 
-  const handleDownloadCV = () => {
-    // Crear un enlace temporal para descargar el CV
-    const link = document.createElement('a');
-    link.href = 'https://readdy.ai/api/search-image?query=professional%20resume%20CV%20template%20for%20UX%20UI%20designer%20with%20modern%20layout%2C%20clean%20typography%2C%20professional%20sections%2C%20white%20background%2C%20elegant%20design%2C%20portfolio%20showcase&width=800&height=1000&seq=cv&orientation=portrait';
-    link.download = 'Maricel_CV_UX_UI_Designer.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
 
   const scrollToProjects = () => {
     document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' });
@@ -169,12 +161,7 @@ export default function HomePage() {
               >
                 Ver mi trabajo
               </button>
-              <button
-                onClick={handleDownloadCV}
-                className="border-2 border-pink-500 text-pink-500 px-8 py-3 rounded-full hover:bg-pink-500 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
-              >
-                Descargar CV
-              </button>
+            
             </div>
           </div>
 
